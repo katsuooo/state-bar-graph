@@ -9,6 +9,14 @@ vue.config.js
 vue.config.jsがない。expressいれてないから？
 つくって上のいれる。
 
+サーバでの表示OK
+起動スクリプト
+
+pm2 start npm --name "state-bar-graph" -- run serve 
+pm2 restart 3 --watch　　　// watch 追加
+
+
+
 
 201219
 
