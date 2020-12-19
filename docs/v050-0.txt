@@ -1,0 +1,22 @@
+201219
+
+konva
+//install
+yarn add vue-konva konva
+//main.js
+import Vue from 'vue';
+import VueKonva from 'vue-konva'
+Vue.use(VueKonva)
+
+chartjs-plugin-color-schemes
+yarn add chartjs-plugin-colorschemes
+
+colorset, step1minをコピーする。
+
+// 状態
+①運転状態
+②異常状態
+③警報状態
+
+
+
