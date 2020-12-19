@@ -1,3 +1,15 @@
+201219-2
+
+release
+devでリリース
+vue.config.js
+  devServer: {
+    disableHostCheck: true
+  }
+vue.config.jsがない。expressいれてないから？
+つくって上のいれる。
+
+
 201219
 
 konva
