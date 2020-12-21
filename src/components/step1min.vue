@@ -19,7 +19,7 @@
             <div style='width:20px;height:20px;display:inline-block;' :style="{backgroundColor:simColor.c3}"></div>
         </div>
         <div class='col-sm-4'>
-            <button @click='btnRestartFast' class='btn btn-sm btn-info'>restart (fast)</button>
+            <button @click='btnRestartFast' class='btn btn-sm btn-info' style='margin-right:10px;'>restart (fast)</button>
             <button @click='btnRestart' class='btn btn-sm btn-warning'>restart (gradualy)</button>
         </div>
         </div><!--row-->
