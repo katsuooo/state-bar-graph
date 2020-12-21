@@ -19,7 +19,8 @@
             <div style='width:20px;height:20px;display:inline-block;' :style="{backgroundColor:simColor.c3}"></div>
         </div>
         <div class='col-sm-4'>
-            <button @click='btnRestart' class='btn btn-sm btn-warning'>restart</button>
+            <button @click='btnRestartFast' class='btn btn-sm btn-info'>restart (fast)</button>
+            <button @click='btnRestart' class='btn btn-sm btn-warning'>restart (gradualy)</button>
         </div>
         </div><!--row-->
         <v-stage :config="configKonva">
@@ -204,6 +205,24 @@ export default {
             this.raw_counter = 0
             this.conf.length = 0
             myTimer(this.btnOn2)
+        },
+        btnRestartFast(){
+            //btn restart
+            this.conf.lenght = 0
+            clearConf(this.conf, this.config_null)
+            this.config_0.fill = this.simColor.c1
+            this.config_1.fill = this.simColor.c2
+            this.config_2.fill = this.simColor.c3
+            this.raw.length = 0
+            this.raw = gen1min.gen24hWithTime(this.simTime)
+            this.conf.length = 0
+            this.conf_counter = 0
+            this.raw_counter = 0
+            this.conf.length = 0
+            //myTimer(this.btnOn2)
+            while(!(this.raw_counter >= (24*60))){
+                this.btnOn2()
+            }
         }
     }
 };
