@@ -145,6 +145,31 @@ export default {
         this.conf_counter = 0
     },
     methods:{
+        viewInit(){
+            for(let i=0; i<=this.x_step_num; i++){
+               // x-unit label
+                var xa = {x:0,y:150,text:'10',fontSize:15, fill:'white'}
+                xa.x = this.x_step_width * i + this.x_offset + this.xa_offset
+                xa.text = i.toString()
+                this.xaConf.push(JSON.parse(JSON.stringify(xa)))
+            }
+            var width = window.innerWidth
+            this.xaUnitConfig.x = width/2
+            width = width - 100
+            this.configKonva.width = width
+            width = width - 70
+            this.x_step_width = width/this.x_step_num
+            this.x_step_min_width = width/(this.x_step_num * 60)
+            for(let i=0; i<=this.x_step_num; i++){
+               // x-unit label
+                xa = {x:0,y:150,text:'10',fontSize:15, fill:'green'}
+                xa.x = this.x_step_width * i + this.x_offset + this.xa_offset
+                xa.text = i.toString()
+                this.xaConf.push(JSON.parse(JSON.stringify(xa)))
+            }
+            this.x_step_minute_width = width/(this.x_step_num * 60)
+            this.conf_counter = 0
+        },
         btnOn2(){
             /**
              * 分毎データにかえる。
@@ -153,8 +178,6 @@ export default {
              * データ変化無時、conf[]の最終データのx値を変更
              * データ変化時、新しくconfデータを作成、追加
              */
-
-            //console.log('conf-counter', this.conf_counter)
             if(this.raw === undefined){
                 console.log('data-error, undefined')
                 stopTimer()
@@ -192,6 +215,7 @@ export default {
             }
         },
         btnRestart(){
+            this.viewInit()
             //btn restart
             this.conf.lenght = 0
             clearConf(this.conf, this.config_null)
@@ -207,6 +231,7 @@ export default {
             myTimer(this.btnOn2)
         },
         btnRestartFast(){
+            this.viewInit()
             //btn restart
             this.conf.lenght = 0
             clearConf(this.conf, this.config_null)
